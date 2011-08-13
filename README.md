@@ -25,14 +25,14 @@ FastCGI backend, the request stays within Apache.
 
 ## mod_aclr directives
 
- **AccelRedirectSet** [On|Off]
- Default: Off
+ **AccelRedirectSet** [On|Off]<br>
+ Default: Off<br>
  Context: server config, virtual host, directory
 
  This directive enables the module.
 
- **AccelRedirectSize** [size] [k|M]
- Default: -1
+ **AccelRedirectSize** [size] [k|M]<br>
+ Default: -1<br>
  Context: server config, virtual host, directory
  
  This directive sets the minimum size of the static files for which the
@@ -40,8 +40,8 @@ FastCGI backend, the request stays within Apache.
  static files will be handled by Nginx, i.e., Apache will send the
  `X-Accel-Redirect` to Nginx for all static files.
 
- **AccelRedirectDebug** [0-4]
- Default: 0
+ **AccelRedirectDebug** [0-4]<br>
+ Default: 0<br>
  Context: server config
 
  Sets the debug level for this module.
@@ -50,23 +50,23 @@ FastCGI backend, the request stays within Apache.
 
  1. Compile the module using [`apxs`](http://man.cx/apxs).
      
-     apxs -c mod_aclr.c
+        apxs -c mod_aclr.c
     
  2. Install it.
      
-     apxs -i mod_aclr.so 
+        apxs -i mod_aclr.so 
  
  4. Configure the module in the Apache configuration file `httpd.conf`
     or equivalent. For example:
  
-     AccelRedirectSet On
-     AccelRedirectSize 1k
+        AccelRedirectSet On
+        AccelRedirectSize 1k
      
 
  3. This module **must** be the **first** to be loaded:
  
-     LoadModule aclr_module libexec/mod_aclr.so
-     AddModule mod_aclr.c
+        LoadModule aclr_module libexec/mod_aclr.so
+        AddModule mod_aclr.c
 
  4. Reload Apache.
  
