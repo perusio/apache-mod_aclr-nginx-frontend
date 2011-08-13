@@ -91,18 +91,18 @@ header `X-Accel-Internal` to be present.
      static file serving by Nginx.
      
      
-  2. Static file handling location:
+ 2. Static file handling location:
   
-         location ~* /static-internal/(?<requested_asset>*.)$ {
-            ## Path to the Apache root directory.
-            root /var/www/mysite.com;
-            return 301 /$requested_asset;
-            ## Protect direct access to this location.
-            internal;
+        location ~* /static-internal/(?<requested_asset>*.)$ {
+           ## Path to the Apache root directory.
+           root /var/www/mysite.com;
+           return 301 /$requested_asset;
+           ## Protect direct access to this location.
+           internal;
          }
 
-      `mod_aclr` returns the header `X-Accel-Redirect:
-      /static-internal/path/to/file` upon which Nginx serves the file
+     `mod_aclr` returns the header `X-Accel-Redirect:
+     /static-internal/path/to/file` upon which Nginx serves the file
       directly.
       
 ## How it works
