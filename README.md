@@ -9,12 +9,10 @@ static files and thus take full benefit of its speed while retaining
 the *"convenience"* of things like `.htaccess`, which are a
 requirement for shared hosting support.
 
+
 The [author](http://miksir.livejournal.com/) of the module no longer
-provides any support of this module and the orginial
-[site](http://miksir.pp.ru/?r=72) is **currently** not available. This
-project was stolen from [Sergey Shepelev](http://temoto.ru) kindly
-provided
-[mirror](http://temoto.ru/mirror/miksir.pp.ru/mod_aclr-eng.html) (in english).
+provides any support of this module, although still providing the code
+and the [documentation](http://miksir.maker.ru/?r=72).
 
 The module creates a special handler for Apache that sends Nginx a
 special header
